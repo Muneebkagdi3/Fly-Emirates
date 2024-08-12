@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content  %} 
+
+
+
+<!--<div class="card" style="width: 100;">
+    <div class="card-body">
+      <h5 class="card-title">{{detail.Flight_Name}}</h5>
+      <p class="card-text">Flight Id: {{detail.id}} </p>
+      <p class="card-text">From: {{detail.From}}</p>
+      <p class="card-text">To: {{detail.To}}</p>
+
+      <a href="#" class="btn btn-primary">Book</a>
+    </div>
+  </div>-->
+
+  <form action="{% url 'payment' detail.id %}">
+
+  <div class="flight-booking">
+    <h2>{{detail.From}} → {{detail.To}}</h2>
+    <p><strong>Date:</strong>{{detail.Date}}</p>
+    <p><strong>Airline:</strong>{{detail.Flight_Name}}</p>
+    <p><Strong>Category:</Strong>{{detail.category}}</p>
+    <p><strong>Duration:</strong>{{detail.Duration}}</p>
+    <p><strong>Price:</strong>{{detail.Price}}</p>
+    <p><strong>Arrival:</strong>{{detail.To}}</p>
+    <p><strong>Baggage:</strong> Cabin - 7 Kgs (1 piece only)/Adult, Check-In - 15 Kgs/Adult</p>
+    <button>+ADD Extra Check-In Baggage</button>
+
+
+      <label for="">Enter Name</label>
+      <input type="text" name="name"><br>
+      <label for="">Enter Age</label><br>
+      <input type="number" name="age" ><br>
+      <label for="gender">Gender</label><br>
+      Male:<input type="radio" value="male" name="gender">Female:<input type="radio" value="female" name="gender">
+    
+
+    <h3>Cancellation Refund Policy</h3>
+    <ul>
+      <li>₹3,450 if cancelled now</li>
+      <li>₹3,975 if cancelled on May 20 at or after 12:05</li>
+      <li>₹10,423 if cancelled on May 21 at or after 10:05</li>
+    </ul>
+  </div>
+
+  <button class="btn btn-primary" type="submit" >Book Ticket</button> 
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+{%endblock%}

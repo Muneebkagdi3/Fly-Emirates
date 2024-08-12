@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+
+
+{% block content%}
+<div style="margin-left: 5%; margin-right: 5%;">
+<table class="table table-bordered border-primary">
+    <button style="border: 1px solid black;  background-color: rgb(102, 102, 221); color: white; padding: 10px;" >Domestic</button>
+    <button style="border: 1px solid black;  background-color: rgb(102, 102, 221); color: white; padding: 10px;" >International</button>
+
+    <thead>
+<tr>
+<th scope="col">Id</th>
+<th scope="col">Flight Name</th>
+<th scope="col">From</th>
+<th scope="col">To</th>
+<th scope="col">Date</th>
+<th scope="col">Price</th>
+<th scope="col">Category</th>
+<th scope="col">Duration</th>
+<th>Book Now</th>
+
+
+</tr>
+</thead>
+
+{% for fly in categoryob.fly_set.all%}
+
+
+<tr>
+<td>{{fly.id}}</td>
+<td>{{fly.Flight_Name}}</td>
+<td>{{fly.From}}</td>
+<td>{{fly.To}}</td>
+<td>{{fly.Date}}</td>
+<td>{{fly.Price}}</td>
+<td>{{fly.category}}</td>
+<td>{{fly.Duration}}</td>
+<td><a class="btn btn-warning" href=" " role="button">Book ticket</a></td>
+
+</tr>
+{%endfor%}
+
+</table>
+</div>
+
+{%endblock%}

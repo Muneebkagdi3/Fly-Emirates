@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content  %}    
+
+<div style="margin-left: 5%; margin-right: 5%;" >
+    <table class="table table-bordered border-primary">
+    <h2 style="color: red; text-align: center;">Ticket & Booking</h2>
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Flight Name</th>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Date</th>
+            <th scope="col">Price</th>
+            <th scope="col">Category</th>
+            <th scope="col">Duration</th>
+            <th>Book Now</th>
+
+
+          
+            
+          </tr>
+        </thead>
+
+        {% for i in list%}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.Flight_Name}}</td>
+            <td>{{i.From}}</td>
+            <td>{{i.To}}</td>
+            <td>{{i.Date}}</td>
+            <td>{{i.Price}}</td>
+            <td>{{i.category.name}}</td>
+            <td>{{i.Duration}}</td>
+            <td><a class="btn btn-warning" href="{% url 'detail' i.id %} " role="button">Book ticket</a></td>
+            
+        </tr>
+ 
+        {%endfor%}
+
+    </table>
+</div>
+
+
+
+{%endblock%}
+
+    
